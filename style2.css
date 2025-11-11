@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
+:root {
+  --bg-dark: #101214;
+  --bg-light: #1b1f24;
+  --accent: #4da8da;
+  --text-light: #f2f2f2;
+  --text-muted: #b5b5b5;
+  --white: #ffffff;
+  --border: #2a2e33;
+  --highlight: #3aafa9;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+*::selection {
+  background: var(--accent);
+  color: var(--white);
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+  padding-left: 35rem;
+}
+
+/* === HEADER === */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 35rem;
+  background: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 3rem;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+header .user img {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+}
+
+header .user .name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+header .user .post {
+  font-size: 1.6rem;
+  color: var(--text-muted);
+}
+
+header .navbar {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+header .navbar ul {
+  list-style: none;
+  padding: 0 2rem;
+}
+
+header .navbar ul li a {
+  display: block;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  background: transparent;
+  border-left: 3px solid transparent;
+  color: var(--text-light);
+  font-size: 1.8rem;
+  border-radius: 0.5rem;
+}
+
+header .navbar ul li a:hover,
+header .navbar ul li a.active {
+  background: var(--accent);
+  border-left-color: var(--highlight);
+  color: var(--white);
+  transform: translateX(5px);
+}
+
+/* === MENU ICON (MOBILE) === */
+#menu {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: var(--accent);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 2.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.6rem;
+  z-index: 1000;
+  display: none;
+}
+
+/* === SECTION STYLE === */
+section {
+  min-height: 100vh;
+  padding: 5rem 10rem;
+}
+
+.heading {
+  text-align: center;
+  font-size: 3.8rem;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.heading::after {
+  content: "";
+  width: 8rem;
+  height: 0.3rem;
+  background: var(--accent);
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* === BUTTONS === */
+.btn {
+  padding: 1rem 3rem;
+  background: var(--accent);
+  color: var(--white);
+  cursor: pointer;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  border-radius: 3rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(77, 168, 218, 0.3);
+}
+
+.btn:hover {
+  background: var(--highlight);
+  transform: scale(1.05);
+}
+
+/* === HOME SECTION === */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8rem;
+}
+
+.home h3 {
+  font-size: 2.6rem;
+  color: var(--highlight);
+}
+
+.home h1 {
+  font-size: 5rem;
+  margin-top: 1rem;
+  color: var(--white);
+}
+
+.home p {
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  margin-top: 2rem;
+  max-width: 100rem;
+  line-height: 1.6;
+}
+
+/* === SKILLS === */
+.skills .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 3rem;
+}
+
+.skills .box {
+  background: var(--bg-light);
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.skills .box i {
+  position: absolute;
+  top: -2rem;
+  left: 2rem;
+  background: var(--accent);
+  color: var(--white);
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 2rem;
+}
+
+.skills .box h3 {
+  font-size: 2.2rem;
+  margin-top: 1rem;
+  color: var(--white);
+}
+
+.skills .box ul {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.skills .box ul li {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  margin: 0.4rem 0;
+  line-height: 1.5;
+}
+
+/* === EXPERIENCE & EDUCATION === */
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 3rem;
+}
+
+.box {
+  background: var(--bg-light);
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.box i {
+  position: absolute;
+  top: -2rem;
+  left: 2rem;
+  background: var(--accent);
+  color: var(--white);
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 2rem;
+}
+
+.box span {
+  display: inline-block;
+  background: var(--border);
+  color: var(--text-muted);
+  border-radius: 3rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.3rem;
+}
+
+.education .box span {
+  margin-top: 2rem;
+}
+
+.experience .box span {
+  margin-top: 2rem;
+}
+
+.box h3 {
+  font-size: 2.2rem;
+  margin-top: 1rem;
+  color: var(--white);
+}
+
+.box p {
+  font-size: 1.6rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+.box ul {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.box ul li {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  margin: 0.4rem 0;
+  line-height: 1.5;
+}
+
+/* === CONTACT === */
+.contact .info h3 {
+  font-size: 1.8rem;
+  color: var(--text-light);
+  margin: 1rem 0;
+}
+
+.contact .info h3 i {
+  color: var(--accent);
+  margin-right: 1rem;
+}
+
+.contact a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.contact a:hover {
+  color: var(--highlight);
+}
+
+/* === SCROLL TOP === */
+.top {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(77, 168, 218, 0.4);
+}
+
+.top:hover {
+  background: var(--highlight);
+  transform: translateY(-3px);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 991px) {
+  body {
+    padding-left: 0;
+  }
+
+  header {
+    left: -120%;
+  }
+
+  header.toggle {
+    left: 0;
+  }
+
+  #menu {
+    display: block;
+  }
+
+  section {
+    padding: 5rem 3rem;
+  }
+
+  .home {
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 55%;
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+
+  .home h1 {
+    font-size: 4rem;
+  }
+}
